@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-
+import { UserService } from '../../services/user.service';
+import alertify from 'alertifyjs'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   forma: FormGroup
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -45,7 +47,20 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.forma.value);
+    if (this.forma.invalid) {
+      alertify.error('Verificar los campos');
+      return
+    }
+
+    this.userService.saveUser(this.forma.value).
+      subscribe(response => {
+        if (response['ok']) {
+          alertify.success(`${response['message']}`);
+        }
+        else {
+          alertify.error(`${response['message']}`);
+        }
+      })
   }
 
 
