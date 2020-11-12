@@ -1,0 +1,17 @@
+.style-text {
+    color: #737172;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-style-custome {
+    background-color: #e03b65;
+    color: white;
+    width: 40%;
+    height: 45px;
+    border-radius: 35px;
+}
+
+.style-custome-form{
+    border-radius: 25px;
+}

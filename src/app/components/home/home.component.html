@@ -1,0 +1,121 @@
+<div class="container-fluid">
+    <div class="row text-center mt-3 mb-1">
+        <div class="col">
+            <img src="https://sigma-studios.s3-us-west-2.amazonaws.com/test/sigma-logo.png" alt="Logo Sigma">
+        </div>
+    </div>
+    <div class="row text-center mt-3">
+        <div class="col">
+            <h2>
+                <b>
+                    Prueba de desarrollo Sigma
+                </b>
+            </h2>
+        </div>
+    </div>
+    <div class="row text-center mt-3 mr-5 ml-5 pr-5 pl-5 style-text">
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur beatae dolore perspiciatis esse, veniam
+            quos
+            voluptates unde repudiandae totam assumenda fugiat in, ea magni. Animi numquam quo vitae nesciunt quibusdam!
+        </div>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col-5">
+            <img src="https://sigma-studios.s3-us-west-2.amazonaws.com/test/sigma-image.png" alt="Logotipo" width="100%"
+                height="100%">
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <form class="border border-light p-5 shadow-lg bg-white style-custome-form" autocomplete="off"
+                [formGroup]="forma" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col" style="float: left !important;">
+                        <label for="">
+                            <b>
+                                Departamento*
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                            placeholder="First name" formControlName="departamento" name="departamento"
+                            [class.is-invalid]="departamentInvalid">
+                        <small *ngIf="departamentInvalid" class="text-danger">
+                            Ingrese un departamento
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="float: left !important;">
+                        <label for="">
+                            <b>
+                                Ciudad*
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                            placeholder="First name" formControlName="ciudad" name="ciudad"
+                            [class.is-invalid]="cityInvalid">
+                        <small *ngIf="cityInvalid" class="text-danger">
+                            Ingrese un ciudad
+                        </small>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col" style="float: left !important;">
+                        <label for="">
+                            <b>
+                                Nombre*
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                            placeholder="First name" formControlName="nombre" name="nombre"
+                            [class.is-invalid]="nameInvalid">
+                        <small *ngIf="nameInvalid" class="text-danger">
+                            Ingrese un nombre
+                        </small>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col" style="float: left !important;">
+                        <label for="">
+                            <b>
+                                Correo*
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                            placeholder="First name" formControlName="correo" name="correo"
+                            [class.is-invalid]="emailInvalid">
+                        <small *ngIf="emailInvalid" class="text-danger">
+                            Ingrese un correo válido
+                        </small>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-style-custome" type="submit">
+                        <b>
+                            ENVIAR
+                        </b>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
